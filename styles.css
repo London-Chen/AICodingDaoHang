@@ -355,7 +355,7 @@ body::after {
 
 /* 左侧边栏 - 终端命令列表风格 */
 .sidebar {
-    width: 320px;
+    width: 380px;
     flex-shrink: 0;
     position: sticky;
     top: 140px;
@@ -419,6 +419,8 @@ body::after {
     border: 1px solid transparent;
     position: relative;
     font-size: 0.9rem;
+    white-space: nowrap;
+    overflow: visible;
 }
 
 .category-item::before {
@@ -456,6 +458,12 @@ body::after {
     width: 18px;
     height: 18px;
     flex-shrink: 0;
+}
+
+.category-item span {
+    flex: 1;
+    white-space: nowrap;
+    overflow: visible;
 }
 
 /* 右侧内容区域 */
@@ -742,6 +750,12 @@ body::after {
 }
 
 /* 响应式设计 */
+@media (max-width: 1200px) {
+    .sidebar {
+        width: 350px;
+    }
+}
+
 @media (max-width: 1024px) {
     .main-layout {
         flex-direction: column;
@@ -768,6 +782,7 @@ body::after {
     .category-item {
         padding: 0.5rem 0.75rem;
         font-size: 0.85rem;
+        white-space: nowrap;
     }
     
     .hero-title {
