@@ -702,6 +702,60 @@ function setupEventListeners() {
         item.addEventListener('click', handleCategoryClick);
     });
 
+    // 汉堡包菜单功能
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const navMenu = document.getElementById('navMenu');
+    const menuOverlay = document.getElementById('menuOverlay');
+    
+    function toggleMobileMenu(show) {
+        const isActive = show !== undefined ? show : !navMenu.classList.contains('active');
+        
+        if (isActive) {
+            mobileMenuBtn.classList.add('active');
+            navMenu.classList.add('active');
+            menuOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        } else {
+            mobileMenuBtn.classList.remove('active');
+            navMenu.classList.remove('active');
+            menuOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    }
+    
+    if (mobileMenuBtn && navMenu && menuOverlay) {
+        // 点击汉堡包按钮
+        mobileMenuBtn.addEventListener('click', function() {
+            toggleMobileMenu();
+        });
+        
+        // 点击遮罩层关闭菜单
+        menuOverlay.addEventListener('click', function() {
+            toggleMobileMenu(false);
+        });
+        
+        // 点击菜单项后关闭菜单
+        document.querySelectorAll('.nav-item').forEach(item => {
+            item.addEventListener('click', function() {
+                toggleMobileMenu(false);
+            });
+        });
+        
+        // 监听屏幕尺寸变化
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 768) {
+                toggleMobileMenu(false);
+            }
+        });
+        
+        // ESC键关闭菜单
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+                toggleMobileMenu(false);
+            }
+        });
+    }
+
     // 添加平滑滚动支持
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
