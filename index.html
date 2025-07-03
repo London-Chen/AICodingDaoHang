@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI编程工具导航站 - 发现最佳AI编程工具</title>
+    <meta name="description" content="为开发者精选的66个AI编程工具集合，包含AI IDE、代码助手、API平台、部署工具等13个分类，提升编程效率。">
+    <meta name="keywords" content="AI编程工具,AI IDE,代码助手,Cursor,ChatGPT,Bolt.new,V0.dev,编程效率,开发者工具">
+    <meta name="author" content="AI编程导航站">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="AI编程工具导航站 - 发现最佳AI编程工具">
+    <meta property="og:description" content="为开发者精选的66个AI编程工具集合，提升编程效率">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ai-coding-navigator.vercel.app">
+    <meta property="og:site_name" content="AI编程导航站">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI编程工具导航站 - 发现最佳AI编程工具">
+    <meta name="twitter:description" content="为开发者精选的66个AI编程工具集合，提升编程效率">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><text y='20' font-size='20'>⚡</text></svg>">
+    
+    <!-- Preload important resources -->
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="preload" href="script.js" as="script">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.css" rel="stylesheet">
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "AI编程工具导航站",
+        "url": "https://ai-coding-navigator.vercel.app",
+        "description": "为开发者精选的AI编程工具集合，提升编程效率",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://ai-coding-navigator.vercel.app?search={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+</head>
+<body>
+    <!-- 头部导航 -->
+    <header class="header">
+        <div class="container">
+            <div class="nav">
+                <div class="logo">
+                    <span class="logo-icon">⚡</span>
+                    <span class="logo-text">AI_NAVIGATOR</span>
+                </div>
+                <nav class="nav-menu">
+                    <a href="#" class="nav-item active">首页</a>
+                    <a href="#" class="nav-item">工具分类</a>
+                    <a href="#" class="nav-item">热门推荐</a>
+                    <a href="#" class="nav-item">关于我们</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- 主要内容区域 -->
+    <main class="main">
+        <div class="container">
+            <!-- Hero区域 -->
+            <section class="hero">
+                <h1 class="hero-title">DISCOVER AI CODING TOOLS</h1>
+                <p class="hero-subtitle">为开发者精选的AI编程工具集合，提升编程效率</p>
+                
+                <!-- 搜索框 -->
+                <div class="search-container">
+                    <div class="search-box">
+                        <input type="text" id="searchInput" placeholder="搜索AI工具..." class="search-input">
+                        <button class="search-btn">
+                            <i data-lucide="search"></i>
+                            搜索
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 主内容布局：左侧导航 + 右侧内容 -->
+            <div class="main-layout">
+                <!-- 左侧分类导航 -->
+                <aside class="sidebar">
+                    <div class="sidebar-content">
+                        <h3 class="sidebar-title">工具分类</h3>
+                        <nav class="category-nav">
+                            <a href="#all" class="category-item active" data-category="all">
+                                <i data-lucide="grid-3x3"></i>
+                                <span>全部工具</span>
+                            </a>
+                            <a href="#ai-ide" class="category-item" data-category="ai-ide">
+                                <i data-lucide="code"></i>
+                                <span>AI编程工具/IDE</span>
+                            </a>
+                            <a href="#ai-assistant" class="category-item" data-category="ai-assistant">
+                                <i data-lucide="bot"></i>
+                                <span>AI助手/大模型</span>
+                            </a>
+                            <a href="#api" class="category-item" data-category="api">
+                                <i data-lucide="plug"></i>
+                                <span>API平台</span>
+                            </a>
+                            <a href="#product-idea" class="category-item" data-category="product-idea">
+                                <i data-lucide="lightbulb"></i>
+                                <span>产品Idea/信息源</span>
+                            </a>
+                            <a href="#deploy" class="category-item" data-category="deploy">
+                                <i data-lucide="rocket"></i>
+                                <span>网站发布与部署</span>
+                            </a>
+                            <a href="#domain" class="category-item" data-category="domain">
+                                <i data-lucide="globe"></i>
+                                <span>域名服务</span>
+                            </a>
+                            <a href="#analytics" class="category-item" data-category="analytics">
+                                <i data-lucide="bar-chart"></i>
+                                <span>用户行为分析</span>
+                            </a>
+                            <a href="#design" class="category-item" data-category="design">
+                                <i data-lucide="palette"></i>
+                                <span>产品设计与原型</span>
+                            </a>
+                            <a href="#templates" class="category-item" data-category="templates">
+                                <i data-lucide="layout-template"></i>
+                                <span>网站模板与组件</span>
+                            </a>
+                            <a href="#opensource" class="category-item" data-category="opensource">
+                                <i data-lucide="github"></i>
+                                <span>开源项目查找</span>
+                            </a>
+                            <a href="#promotion" class="category-item" data-category="promotion">
+                                <i data-lucide="megaphone"></i>
+                                <span>冷启动与推广</span>
+                            </a>
+                            <a href="#learning" class="category-item" data-category="learning">
+                                <i data-lucide="book-open"></i>
+                                <span>课程相关示例</span>
+                            </a>
+                            <a href="#other" class="category-item" data-category="other">
+                                <i data-lucide="wrench"></i>
+                                <span>其他工具/平台</span>
+                            </a>
+                        </nav>
+                    </div>
+                </aside>
+
+                <!-- 右侧主内容区域 -->
+                <div class="content-area">
+                    <!-- 热门推荐模块 -->
+                    <section id="popular" class="content-section">
+                        <div class="section-header">
+                            <h2 class="section-title">🔥 热门推荐</h2>
+                            <p class="section-subtitle">最受开发者欢迎的AI编程工具</p>
+                        </div>
+                        <div class="tools-grid" id="popularGrid">
+                            <!-- 热门工具将在这里动态生成 -->
+                        </div>
+                    </section>
+
+                    <!-- 最新收录模块 -->
+                    <section id="latest" class="content-section">
+                        <div class="section-header">
+                            <h2 class="section-title">✨ 最新收录</h2>
+                            <p class="section-subtitle">最近添加的优质AI工具</p>
+                        </div>
+                        <div class="tools-grid" id="latestGrid">
+                            <!-- 最新工具将在这里动态生成 -->
+                        </div>
+                    </section>
+
+                    <!-- 各分类模块 -->
+                    <section id="ai-ide" class="content-section category-section">
+                        <div class="section-header">
+                            <h2 class="section-title">🚀 AI编程工具/IDE & 产品原型</h2>
+                            <p class="section-subtitle">快速开发和原型制作工具</p>
+                        </div>
+                        <div class="tools-grid" id="ai-ide-grid">
+                            <!-- AI编程工具将在这里动态生成 -->
+                        </div>
+                    </section>
+
+                    <section id="ai-assistant" class="content-section category-section">
+                        <div class="section-header">
+                            <h2 class="section-title">🤖 AI助手/大模型对话工具</h2>
+                            <p class="section-subtitle">智能对话和编程辅助</p>
+                        </div>
+                        <div class="tools-grid" id="ai-assistant-grid">
+                            <!-- AI助手工具将在这里动态生成 -->
+                        </div>
+                    </section>
+
+                    <section id="api" class="content-section category-section">
+                        <div class="section-header">
+                            <h2 class="section-title">🔌 API平台</h2>
+                            <p class="section-subtitle">AI模型API服务平台</p>
+                        </div>
+                        <div class="tools-grid" id="api-grid">
+                            <!-- API平台工具将在这里动态生成 -->
+                        </div>
+                    </section>
+
+                    <section id="product-idea" class="content-section category-section">
+                        <div class="section-header">
+                            <h2 class="section-title">💡 产品Idea/AI产品信息源</h2>
+                            <p class="section-subtitle">产品创意和信息获取</p>
+                        </div>
+                        <div class="tools-grid" id="product-idea-grid">
+                            <!-- 产品Idea工具将在这里动态生成 -->
+                        </div>
+                    </section>
+
+                    <section id="deploy" class="content-section category-section">
+                        <div class="section-header">
+                            <h2 class="section-title">🚢 网站发布与部署</h2>
+                            <p class="section-subtitle">快速部署和托管服务</p>
+                        </div>
+                        <div class="tools-grid" id="deploy-grid">
+                            <!-- 部署工具将在这里动态生成 -->
+                        </div>
+                    </section>
+
+                    <section id="domain" class="content-section category-section">
+                        <div class="section-header">
+                            <h2 class="section-title">🌐 域名服务</h2>
+                            <p class="section-subtitle">域名注册和管理</p>
+                        </div>
+                        <div class="tools-grid" id="domain-grid">
+                            <!-- 域名服务工具将在这里动态生成 -->
+                        </div>
+                    </section>
+
+                    <section id="analytics" class="content-section category-section">
+                        <div class="section-header">
+                            <h2 class="section-title">📊 用户行为分析与统计</h2>
+                            <p class="section-subtitle">网站数据分析工具</p>
+                        </div>
+                        <div class="tools-grid" id="analytics-grid">
+                            <!-- 分析工具将在这里动态生成 -->
+                        </div>
+                    </section>
+
+                    <section id="design" class="content-section category-section">
+                        <div class="section-header">
+                            <h2 class="section-title">🎨 产品设计与原型美化</h2>
+                            <p class="section-subtitle">UI设计和原型工具</p>
+                        </div>
+                        <div class="tools-grid" id="design-grid">
+                            <!-- 设计工具将在这里动态生成 -->
+                        </div>
+                    </section>
+
+                    <section id="templates" class="content-section category-section">
+                        <div class="section-header">
+                            <h2 class="section-title">📦 网站模板与组件</h2>
+                            <p class="section-subtitle">现成的模板和UI组件</p>
+                        </div>
+                        <div class="tools-grid" id="templates-grid">
+                            <!-- 模板工具将在这里动态生成 -->
+                        </div>
+                    </section>
+
+                    <section id="opensource" class="content-section category-section">
+                        <div class="section-header">
+                            <h2 class="section-title">📂 开源项目查找与示例</h2>
+                            <p class="section-subtitle">优质开源项目和代码示例</p>
+                        </div>
+                        <div class="tools-grid" id="opensource-grid">
+                            <!-- 开源项目工具将在这里动态生成 -->
+                        </div>
+                    </section>
+
+                    <section id="promotion" class="content-section category-section">
+                        <div class="section-header">
+                            <h2 class="section-title">📢 冷启动与推广平台</h2>
+                            <p class="section-subtitle">产品推广和营销平台</p>
+                        </div>
+                        <div class="tools-grid" id="promotion-grid">
+                            <!-- 推广工具将在这里动态生成 -->
+                        </div>
+                    </section>
+
+                    <section id="learning" class="content-section category-section">
+                        <div class="section-header">
+                            <h2 class="section-title">📚 课程相关示例与资源</h2>
+                            <p class="section-subtitle">学习资源和实践案例</p>
+                        </div>
+                        <div class="tools-grid" id="learning-grid">
+                            <!-- 学习资源将在这里动态生成 -->
+                        </div>
+                    </section>
+
+                    <section id="other" class="content-section category-section">
+                        <div class="section-header">
+                            <h2 class="section-title">🔧 其他工具/平台</h2>
+                            <p class="section-subtitle">其他实用工具和平台</p>
+                        </div>
+                        <div class="tools-grid" id="other-grid">
+                            <!-- 其他工具将在这里动态生成 -->
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 AI编程工具导航站 - 为开发者而生</p>
+        </div>
+    </footer>
+
+    <!-- 启动画面 -->
+    <div id="bootScreen" class="boot-screen">
+        <div class="boot-content">
+            <div class="boot-logo">⚡ AI_NAVIGATOR</div>
+            <div class="boot-progress">
+                <div class="boot-progress-bar"></div>
+            </div>
+            <div class="boot-text">
+                <div class="boot-line">正在初始化AI编程导航系统...</div>
+                <div class="boot-line">加载量子算法模块...</div>
+                <div class="boot-line">扫描工具数据库...</div>
+                <div class="boot-line">连接神经网络...</div>
+                <div class="boot-line">系统就绪 - 欢迎来到AI编程世界</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 
